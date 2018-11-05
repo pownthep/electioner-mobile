@@ -34,7 +34,7 @@ export class VoteComponent implements OnInit {
   constructor(private page: Page) {
       this.dataItems = [];
       request({
-          url: "http://192.168.1.3/api/area/01",
+          url: "http://35.197.142.51/api/area/01",
           method: "GET"
       }).then((response) => {
           this.candidates$ = response.content.toJSON();
