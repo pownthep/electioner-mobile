@@ -1,0 +1,10 @@
+<ActionBar title="Candidates" class="action-bar">
+</ActionBar>
+<ListView [items]="dataItems" (setupItemView)="onSetupItemView($event)" class="list-group">
+    <ng-template let-dataitem="item" let-i="index" let-third="third" let-header="header" let-footer="footer">
+        <GridLayout class="list-item">
+            <Image [src]="qr" (tap)="onTap(dataitem.id, dataitem.name, dataitem.party)"></Image>
+            <Label [text]="dataitem.name" class="item-title"></Label>
+        </GridLayout>
+    </ng-template>
+</ListView>

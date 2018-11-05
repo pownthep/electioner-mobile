@@ -1,0 +1,16 @@
+<TabView androidTabsPosition="bottom" tabBackgroundColor="transparent" androidSelectedTabHighlightColor="#009688">
+    <page-router-outlet 
+        *tabItem="{title: 'Home'}" 
+        name="homeTab">
+    </page-router-outlet>
+
+    <page-router-outlet
+        *tabItem="{title: 'Vote'}" 
+        name="voteTab">
+    </page-router-outlet>
+
+    <page-router-outlet
+        *tabItem="{title: 'Wallet'}" 
+        name="keyTab">
+    </page-router-outlet>
+</TabView>

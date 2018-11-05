@@ -1,0 +1,16 @@
+/* Add mobile styles for the component here.  */
+.action-bar {
+    background-color: teal;
+    color: white;
+}
+.list-item {
+    margin-bottom: 2;
+}
+
+.item-title {
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    vertical-align: bottom;
+    padding: 16;
+    font-size: 20;
+}
