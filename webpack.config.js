@@ -18,6 +18,7 @@ module.exports = env => {
         "tns-core-modules/ui/frame/activity",
     ];
 
+    
     const platform = env && (env.android && "android" || env.ios && "ios");
     if (!platform) {
         throw new Error("You need to provide a target platform!");

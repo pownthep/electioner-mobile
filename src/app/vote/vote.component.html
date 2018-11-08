@@ -3,8 +3,15 @@
 <ListView [items]="dataItems" (setupItemView)="onSetupItemView($event)" class="list-group">
     <ng-template let-dataitem="item" let-i="index" let-third="third" let-header="header" let-footer="footer">
         <GridLayout class="list-item">
-            <Image [src]="qr" (tap)="onTap(dataitem.id, dataitem.name, dataitem.party)"></Image>
+            <Image [src]="dataitem.url" (tap)="onTap(dataitem.id, dataitem.name, dataitem.party)" stretch="aspectFill"></Image>
             <Label [text]="dataitem.name" class="item-title"></Label>
         </GridLayout>
     </ng-template>
 </ListView>
+
+<FlexboxLayout>
+    <StackLayout>
+        <Label class="text-center font-weight-bold" text="You already voted!" style="font-size: 24pt; color: #009688;" *ngIf="voted"></Label>
+        <Button class="btn btn-outline btn-rounded-lg btn-active btn-primary" text="Login" style="font-size: 16pt;" (tap)="login()"  *ngIf="!authenticated"></Button>
+    </StackLayout>
+</FlexboxLayout>

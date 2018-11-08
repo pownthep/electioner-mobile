@@ -30,8 +30,6 @@ StackLayout {
 
 Image {
     height: 300;
+    width: 100%;
 }
 
-TabView {
-    background-color: white;
-}

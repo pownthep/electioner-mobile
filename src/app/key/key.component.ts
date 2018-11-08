@@ -6,6 +6,7 @@ import {
 } from "tns-core-modules/application-settings";
 import { request } from "tns-core-modules/http";
 import * as forge from 'node-forge';
+import { confirm } from "tns-core-modules/ui/dialogs";
 
 @Component({
   selector: 'ns-key',
@@ -18,28 +19,55 @@ export class KeyComponent implements OnInit {
   public image = getString("pubQR") ? getString("pubQR") : "~/app/images/key.png";
   public loading = false;
   generate() {
-    this.loading = true;
-    setTimeout(() => {
-      var keypair = forge.pki.rsa.generateKeyPair({bits: 512, e: 0x10001});
-      setString("privateKey", forge.pki.privateKeyToPem(keypair.privateKey));
-      setString("publicKey", forge.pki.publicKeyToPem(keypair.publicKey));
-      request({
-          url: "http://35.197.142.51/api/qr",
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          content: JSON.stringify({
-              data: getString("publicKey")
-          })
-      }).then((response) => {
-          setString("pubQR", response.content.toJSON());
-          this.loading = false;
-          this.image = getString("pubQR");
-          console.log("Key pair is generated and saved.");
-      }, (e) => {
-          console.log(e);
-      });
-    }, 2000);
+    let options = {
+        title: "Digital Key",
+        message: "Are you sure you want to be generate new keypair?",
+        okButtonText: "Yes",
+        cancelButtonText: "No",
+    };
     
+    confirm(options).then((result: boolean) => {
+        if(result) {
+            this.loading = true;
+            setTimeout(() => {
+              var keypair = forge.pki.rsa.generateKeyPair({bits: 512, e: 0x10001});
+              setString("privateKey", forge.pki.privateKeyToPem(keypair.privateKey));
+              setString("publicKey", forge.pki.publicKeyToPem(keypair.publicKey));
+              console.log(forge.pki.publicKeyToPem(keypair.publicKey));
+              request({
+                  url: "http://35.197.142.51/api/qr",
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  content: JSON.stringify({
+                      data: getString("publicKey")
+                  })
+              }).then((response) => {
+                  setString("pubQR", response.content.toJSON());
+                  this.loading = false;
+                  this.image = getString("pubQR");
+                  console.log("Key pair is generated and saved.");
+              }, (e) => {
+                  console.log(e);
+              });
+            }, 2000);
+        }
+    });
+  }
+
+  test() {
+    request({
+        url: "http://192.168.1.3/users/register",
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        content: JSON.stringify({
+            key: getString("publicKey"),
+            district: "NakhonRatchasima District 14",
+        })
+    }).then((response) => {
+        console.log(response.content);
+    }, (e) => {
+        console.log(e);
+    });    
   }
 
   constructor(private page: Page) {

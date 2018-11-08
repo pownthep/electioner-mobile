@@ -14,3 +14,8 @@
     padding: 16;
     font-size: 20;
 }
+.btn-primary{
+    background-color: white;
+    color: teal;
+    border-color: teal;
+}
