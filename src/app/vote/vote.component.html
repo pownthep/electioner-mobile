@@ -11,7 +11,11 @@
 
 <FlexboxLayout>
     <StackLayout>
-        <Label class="text-center font-weight-bold" text="You already voted!" style="font-size: 24pt; color: #009688;" *ngIf="voted"></Label>
-        <Button class="btn btn-outline btn-rounded-lg btn-active btn-primary" text="Login" style="font-size: 16pt;" (tap)="login()"  *ngIf="!authenticated"></Button>
+        <ActivityIndicator row="1" #activityIndicator busy="true" (busyChange)="onBusyChanged($event)" *ngIf="logging" width="100" height="300" class="activity-indicator"></ActivityIndicator>
+        <Image src="~/app/images/warning.png" style="height: 80" *ngIf="voted && !transaction"></Image>
+        <Label textWrap="true" class="text-center font-weight-bold" [text]="message" style="font-size: 24pt; color: #3F51B5;" *ngIf="voted"></Label>
+        <Label textWrap="true" class="text-center font-weight-bold" [text]="transaction" style="font-size: 24pt; color: #3F51B5;" *ngIf="voted && transaction"></Label>        
+        <Button class="btn btn-outline btn-rounded-lg btn-active btn-primary" text="Login" style="font-size: 16pt;" (tap)="login()"  *ngIf="!authenticated && !logging"></Button>
+        <Button class="btn btn-outline btn-rounded-lg btn-active btn-primary" text="Retry" style="font-size: 16pt;" (tap)="login()"  *ngIf="voted"></Button>
     </StackLayout>
 </FlexboxLayout>

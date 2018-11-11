@@ -1,6 +1,6 @@
 /* Add mobile styles for the component here.  */
 .action-bar {
-    background-color: teal;
+    background-color: #3F51B5;
     color: white;
 }
 .list-item {
@@ -16,6 +16,9 @@
 }
 .btn-primary{
     background-color: white;
-    color: teal;
-    border-color: teal;
+    color: #3F51B5;
+    border-color: #3F51B5;
+}
+.activity-indicator{
+    color: #3F51B5;
 }

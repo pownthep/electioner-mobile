@@ -1,12 +1,11 @@
-<TabView androidTabsPosition="top" tabBackgroundColor="teal" androidSelectedTabHighlightColor="white" 
+<TabView androidTabsPosition="top" tabBackgroundColor="#3F51B5" androidSelectedTabHighlightColor="white" 
 tabTextColor="white" selectedTabTextColor="white">
-    <page-router-outlet
-        *tabItem="{title: 'Vote'}" 
-        name="voteTab">
-    </page-router-outlet>
-
     <page-router-outlet
         *tabItem="{title: 'Wallet'}" 
         name="keyTab">
+    </page-router-outlet>
+    <page-router-outlet
+        *tabItem="{title:  'Vote'}" 
+        name="voteTab">
     </page-router-outlet>
 </TabView>

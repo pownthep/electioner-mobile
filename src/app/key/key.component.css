@@ -1,9 +1,9 @@
 /* Add mobile styles for the component here.  */
 .btn-primary{
     background-color: white;
-    color: teal;
-    border-color: teal;
+    color: #3F51B5;
+    border-color: #3F51B5;
 }
 .activity-indicator{
-    color: teal;
+    color: #3F51B5;
 }
