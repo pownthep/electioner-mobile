@@ -29,7 +29,7 @@ StackLayout {
 }
 
 Image {
-    height: 300;
+    /*height: 300;*/
     width: 100%;
 }
 

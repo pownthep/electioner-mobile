@@ -35,7 +35,7 @@ export class KeyComponent implements OnInit {
               setString("publicKey", forge.pki.publicKeyToPem(keypair.publicKey));
               console.log(forge.pki.publicKeyToPem(keypair.publicKey));
               request({
-                  url: "http://35.197.142.51/api/qr",
+                  url: "https://electioner.tk/api/qr",
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   content: JSON.stringify({
@@ -56,7 +56,7 @@ export class KeyComponent implements OnInit {
 
   test() {
     request({
-        url: "http://192.168.1.3/users/register",
+        url: "https://electioner.tk/users/register",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         content: JSON.stringify({

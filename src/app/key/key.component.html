@@ -1,8 +1,8 @@
 <FlexboxLayout>
     <StackLayout>
-        <Label class="text-center font-weight-bold" text="PUBLIC KEY" style="font-size: 24pt; color: #3F51B5;"></Label>
+        <Label class="text-center font-weight-bold" text="PUBLIC KEY" style="font-size: 24pt; color: #21ABA5;"></Label>
         <Image src={{image}} *ngIf="!loading"></Image>
         <ActivityIndicator row="1" #activityIndicator busy="true" (busyChange)="onBusyChanged($event)" *ngIf="loading" width="100" height="300" class="activity-indicator"></ActivityIndicator>
-        <Button class="btn btn-outline btn-rounded-lg btn-active btn-primary" text="Generate" style="font-size: 16pt;" (tap)="generate()"></Button>
+        <Button class="btn btn-rounded-sm btn-active btn-primary" text="Generate" style="font-size: 16pt;" (tap)="generate()"></Button>
     </StackLayout>
 </FlexboxLayout>

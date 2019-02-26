@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "org.nativescript.zkpauth",
+    "id": "org.nativescript.electioner",
     "tns-android": {
       "version": "4.2.0"
     },
@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~6.1.0",
     "@angular/router": "~6.1.0",
     "font-awesome": "^4.7.0",
+    "jspaillier": "^0.1.1",
     "nativescript-angular": "~6.1.0",
     "nativescript-fontawesome": "^1.0.0",
     "nativescript-theme-core": "~1.0.4",
