@@ -9,7 +9,7 @@ import { Page } from "tns-core-modules/ui/page/page";
 import * as forge from 'node-forge';
 import * as paillier from 'jspaillier';
 import * as BigInteger from 'jsbn';
-
+import { AppState } from '../config'
 
 class Item {
     constructor(public name: string, public id: string, public party: string, public url: string) { }
@@ -25,7 +25,7 @@ export class VoteComponent implements OnInit {
     public encryptedData;
     public for;
     public against;
-    public baseURL = "https://electioner.tk";
+    public baseURL = AppState.config;
     public dataItems: Array<Item>;
     public candidates$;
     public qr = "~/app/images/boy.png";

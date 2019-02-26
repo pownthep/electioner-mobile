@@ -7,6 +7,7 @@ import {
 import { request } from "tns-core-modules/http";
 import * as forge from 'node-forge';
 import { confirm } from "tns-core-modules/ui/dialogs";
+import { AppState } from '../config'
 
 @Component({
   selector: 'ns-key',
@@ -35,7 +36,7 @@ export class KeyComponent implements OnInit {
               setString("publicKey", forge.pki.publicKeyToPem(keypair.publicKey));
               console.log(forge.pki.publicKeyToPem(keypair.publicKey));
               request({
-                  url: "https://electioner.tk/api/qr",
+                  url: AppState.config+"/api/qr",
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   content: JSON.stringify({
@@ -56,7 +57,7 @@ export class KeyComponent implements OnInit {
 
   test() {
     request({
-        url: "https://electioner.tk/users/register",
+        url: AppState.config+"/users/register",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         content: JSON.stringify({
