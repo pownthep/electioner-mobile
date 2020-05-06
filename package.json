@@ -10,7 +10,7 @@
   },
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
-  "repository": "<fill-your-repository-here>",
+  "repository": "https://github.com/pownthep/electioner-mobile.git",
   "dependencies": {
     "@angular/animations": "8.0.0",
     "@angular/common": "8.0.0",
@@ -38,7 +38,7 @@
     "@angular/compiler-cli": "8.0.0",
     "@nativescript/schematics": "~0.3.0",
     "@ngtools/webpack": "8.0.0",
-    "nativescript-dev-webpack": "1.0.1",
+    "nativescript-dev-webpack": "^1.5.1",
     "typescript": "3.4.5"
   },
   "readme": "NativeScript Application"

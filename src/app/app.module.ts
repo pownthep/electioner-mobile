@@ -3,7 +3,6 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { HomeComponent } from "./home/home.component";
 import { KeyComponent } from './key/key.component';
 import { VoteComponent } from './vote/vote.component';
 
@@ -18,7 +17,6 @@ import { VoteComponent } from './vote/vote.component';
     ],
     declarations: [
         AppComponent,
-        HomeComponent,
         KeyComponent,
         VoteComponent
     ],

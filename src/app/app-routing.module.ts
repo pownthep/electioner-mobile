@@ -6,9 +6,7 @@ import { VoteComponent } from "./vote/vote.component";
 import { KeyComponent } from "./key/key.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/(homeTab:home//keyTab:key//voteTab:vote)", pathMatch: "full" },
-
-    { path: "home", component: HomeComponent, outlet: "homeTab" },
+    { path: "", redirectTo: "/(keyTab:key//voteTab:vote)", pathMatch: "full" },
     { path: "vote", component: VoteComponent, outlet: "voteTab" },
     { path: "key", component: KeyComponent, outlet: "keyTab" },
 ];
