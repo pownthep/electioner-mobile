@@ -23,7 +23,8 @@
 		android:allowBackup="true"
 		android:icon="@drawable/icon"
 		android:label="electioner"
-		android:theme="@style/AppTheme">
+		android:theme="@style/AppTheme"
+		android:usesCleartextTraffic="true">
 
 		<activity
 			android:name="com.tns.NativeScriptActivity"
